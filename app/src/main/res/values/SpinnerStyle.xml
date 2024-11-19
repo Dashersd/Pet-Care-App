@@ -1,0 +1,7 @@
+<resources>
+    <!-- Custom spinner style -->
+    <style name="CustomSpinnerStyle" parent="@android:style/Widget.Material.Spinner">
+        <item name="android:popupBackground">@color/black</item> <!-- White dropdown -->
+        <item name="android:textColor">@color/white</item> <!-- Black text -->
+    </style>
+</resources>

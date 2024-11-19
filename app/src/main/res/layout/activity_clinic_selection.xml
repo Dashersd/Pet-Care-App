@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF6E9"
+    tools:context=".Clinic_SelectionActivity">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="69dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back"
+        tools:ignore="ContentDescription" />
+
+    <!-- Title -->
+
+    <!-- Search Bar -->
+
+    <!-- Search Icon -->
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Vet Clinic"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="345dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/text_border"
+        android:ems="10"
+        android:hint="Search"
+        android:inputType="text"
+        android:paddingStart="60dp"
+        android:textColor="@color/black"
+        android:textColorHint="#6A6868"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView44"
+        tools:ignore="Autofill,HardcodedText,RtlSymmetry" />
+
+    <ImageView
+        android:id="@+id/imageView37"
+        android:layout_width="34dp"
+        android:layout_height="33dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextText"
+        app:layout_constraintEnd_toEndOf="@+id/editTextText"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/editTextText"
+        app:layout_constraintTop_toTopOf="@+id/editTextText"
+        app:layout_constraintVertical_bias="0.523"
+        app:srcCompat="@drawable/ic__glass"
+        tools:ignore="ContentDescription" />
+
+    <!-- ScrollView for the Clinic Entries -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- First Clinic Entry -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- Clinic Logo -->
+                <ImageView
+                    android:id="@+id/clinic_logo_1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Clinic Logo"
+                    android:src="@drawable/ic_clinic_logo"
+                    tools:ignore="HardcodedText" />
+
+                <!-- Clinic Information -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    tools:ignore="RtlSymmetry">
+
+                    <!-- Clinic Name -->
+                    <TextView
+                        android:id="@+id/clinic_name_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Happy Paws Veterinary Clinic"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Hours -->
+                    <TextView
+                        android:id="@+id/clinic_hours_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monday to Friday: 8:00 AM - 6:00 PM"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Address -->
+                    <TextView
+                        android:id="@+id/clinic_address_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="123 Pet Lane, FurBury, CA 90210"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Buttons -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <!-- View Profile Button -->
+
+                        <!-- Book Appointment Button -->
+
+                        <Button
+                            android:id="@+id/view_profile_button_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/button_view_profile"
+                            android:padding="8dp"
+                            android:text="View Profile"
+                            android:textColor="@android:color/black"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+
+                        <Button
+                            android:id="@+id/book_appointment_button_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="@android:color/holo_orange_light"
+                            android:padding="8dp"
+                            android:text="Book Appointment"
+                            android:textColor="@android:color/white"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Repeat the same structure for additional clinics -->
+            <!-- Second Clinic Entry -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- Clinic Logo -->
+                <ImageView
+                    android:id="@+id/clinic_logo_2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Clinic Logo"
+                    android:src="@drawable/ic_clinic_logo"
+                    tools:ignore="HardcodedText" />
+
+                <!-- Clinic Information -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    tools:ignore="RtlSymmetry">
+
+                    <!-- Clinic Name -->
+                    <TextView
+                        android:id="@+id/clinic_name_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Caring Paws Clinic"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Hours -->
+                    <TextView
+                        android:id="@+id/clinic_hours_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monday to Friday: 9:00 AM - 5:00 PM"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Address -->
+                    <TextView
+                        android:id="@+id/clinic_address_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="456 Animal Ave, FurBury, CA 90211"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Buttons -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <!-- View Profile Button -->
+                        <Button
+                            android:id="@+id/view_profile_button_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/button_view_profile"
+                            android:padding="8dp"
+                            android:text="View Profile"
+                            android:textColor="@android:color/black"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+
+                        <!-- Book Appointment Button -->
+                        <Button
+                            android:id="@+id/book_appointment_button_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@android:color/holo_orange_light"
+                            android:padding="8dp"
+                            android:text="Book Appointment"
+                            android:textColor="@android:color/white"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Third Clinic Entry -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- Clinic Logo -->
+                <ImageView
+                    android:id="@+id/clinic_logo_3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Clinic Logo"
+                    android:src="@drawable/ic_clinic_logo"
+                    tools:ignore="HardcodedText" />
+
+                <!-- Clinic Information -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    tools:ignore="RtlSymmetry">
+
+                    <!-- Clinic Name -->
+                    <TextView
+                        android:id="@+id/clinic_name_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paws and Claws Clinic"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Hours -->
+                    <TextView
+                        android:id="@+id/clinic_hours_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monday to Friday: 8:00 AM - 4:00 PM"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Address -->
+                    <TextView
+                        android:id="@+id/clinic_address_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="789 Cat St, FurBury, CA 90212"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Buttons -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <!-- View Profile Button -->
+                        <Button
+                            android:id="@+id/view_profile_button_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/button_view_profile"
+                            android:padding="8dp"
+                            android:text="View Profile"
+                            android:textColor="@android:color/black"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+
+                        <!-- Book Appointment Button -->
+                        <Button
+                            android:id="@+id/book_appointment_button_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@android:color/holo_orange_light"
+                            android:padding="8dp"
+                            android:text="Book Appointment"
+                            android:textColor="@android:color/white"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Fourth Clinic Entry -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- Clinic Logo -->
+                <ImageView
+                    android:id="@+id/clinic_logo_4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Clinic Logo"
+                    android:src="@drawable/ic_clinic_logo"
+                    tools:ignore="HardcodedText" />
+
+                <!-- Clinic Information -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    tools:ignore="RtlSymmetry">
+
+                    <!-- Clinic Name -->
+                    <TextView
+                        android:id="@+id/clinic_name_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Puppy Love Clinic"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Hours -->
+                    <TextView
+                        android:id="@+id/clinic_hours_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monday to Friday: 7:30 AM - 6:30 PM"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Address -->
+                    <TextView
+                        android:id="@+id/clinic_address_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="101 Dog Blvd, FurBury, CA 90213"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Buttons -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <!-- View Profile Button -->
+                        <Button
+                            android:id="@+id/view_profile_button_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/button_view_profile"
+                            android:padding="8dp"
+                            android:text="View Profile"
+                            android:textColor="@android:color/black"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+
+                        <!-- Book Appointment Button -->
+                        <Button
+                            android:id="@+id/book_appointment_button_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@android:color/holo_orange_light"
+                            android:padding="8dp"
+                            android:text="Book Appointment"
+                            android:textColor="@android:color/white"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- Fifth Clinic Entry -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- Clinic Logo -->
+                <ImageView
+                    android:id="@+id/clinic_logo_5"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Clinic Logo"
+                    android:src="@drawable/ic_clinic_logo"
+                    tools:ignore="HardcodedText" />
+
+                <!-- Clinic Information -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    tools:ignore="RtlSymmetry">
+
+                    <!-- Clinic Name -->
+                    <TextView
+                        android:id="@+id/clinic_name_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Furry Friends Veterinary"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Hours -->
+                    <TextView
+                        android:id="@+id/clinic_hours_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monday to Friday: 9:00 AM - 7:00 PM"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Address -->
+                    <TextView
+                        android:id="@+id/clinic_address_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="321 Purr St, FurBury, CA 90214"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Buttons -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <!-- View Profile Button -->
+                        <Button
+                            android:id="@+id/view_profile_button_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/button_view_profile"
+                            android:padding="8dp"
+                            android:text="View Profile"
+                            android:textColor="@android:color/black"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+
+                        <!-- Book Appointment Button -->
+                        <Button
+                            android:id="@+id/book_appointment_button_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@android:color/holo_orange_light"
+                            android:padding="8dp"
+                            android:text="Book Appointment"
+                            android:textColor="@android:color/white"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Sixth Clinic Entry -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- Clinic Logo -->
+                <ImageView
+                    android:id="@+id/clinic_logo_6"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription=" Clinic Logo"
+                    android:src="@drawable/ic_clinic_logo"
+                    tools:ignore="HardcodedText" />
+
+                <!-- Clinic Information -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    tools:ignore="RtlSymmetry">
+
+                    <!-- Clinic Name -->
+                    <TextView
+                        android:id="@+id/clinic_name_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Whiskers and Tails Vet"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Hours -->
+                    <TextView
+                        android:id="@+id/clinic_hours_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monday to Saturday: 8:00 AM - 5:00 PM"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Address -->
+                    <TextView
+                        android:id="@+id/clinic_address_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="654 Paw Ave, FurBury, CA 90215"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Buttons -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <!-- View Profile Button -->
+                        <Button
+                            android:id="@+id/view_profile_button_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/button_view_profile"
+                            android:padding="8dp"
+                            android:text="View Profile"
+                            android:textColor="@android:color/black"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+
+                        <!-- Book Appointment Button -->
+                        <Button
+                            android:id="@+id/book_appointment_button_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@android:color/holo_orange_light"
+                            android:padding="8dp"
+                            android:text="Book Appointment"
+                            android:textColor="@android:color/white"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Seventh Clinic Entry -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- Clinic Logo -->
+                <ImageView
+                    android:id="@+id/clinic_logo_7"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Clinic Logo"
+                    android:src="@drawable/ic_clinic_logo"
+                    tools:ignore="HardcodedText" />
+
+                <!-- Clinic Information -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    tools:ignore="RtlSymmetry">
+
+                    <!-- Clinic Name -->
+                    <TextView
+                        android:id="@+id/clinic_name_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pet Paradise Clinic"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Hours -->
+                    <TextView
+                        android:id="@+id/clinic_hours_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monday to Sunday: 7:00 AM - 6:00 PM"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Clinic Address -->
+                    <TextView
+                        android:id="@+id/clinic_address_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="987 Pet Place, FurBury, CA 90216"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Buttons -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <!-- View Profile Button -->
+                        <Button
+                            android:id="@+id/view_profile_button_7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/button_view_profile"
+                            android:padding="8dp"
+                            android:text="View Profile"
+                            android:textColor="@android:color/black"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+
+                        <!-- Book Appointment Button -->
+                        <Button
+                            android:id="@+id/book_appointment_button_7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@android:color/holo_orange_light"
+                            android:padding="8dp"
+                            android:text="Book Appointment"
+                            android:textColor="@android:color/white"
+                            tools:ignore="ButtonStyle,HardcodedText" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
