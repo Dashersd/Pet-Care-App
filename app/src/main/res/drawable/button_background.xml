@@ -5,10 +5,9 @@
     <!-- Border settings -->
     <stroke
         android:color="#FF7F3E"
-        android:width="5dp"
-        android:strokeWidth="5dp" />
+        android:width="5dp" />
 
-    <!-- Border position outside -->
+    <!-- Padding (optional if no content inside) -->
     <padding
         android:left="0dp"
         android:top="0dp"

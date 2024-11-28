@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Required Internet permission for Firebase and other network usage -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -15,8 +14,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetCareApp"
         tools:targetApi="31">
-
-        <!-- Activity declarations -->
+        <activity
+            android:name=".edit_licenseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".edit_insuranceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".edit_microchipActivity"
+            android:exported="false" />
+        <activity
+            android:name=".edit_petActivity"
+            android:exported="false" />
+        <activity
+            android:name=".license_detailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".insurance_detailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".microchip_detailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pet_detailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pet_profileActivity"
+            android:exported="false"
+            android:label="@string/title_activity_pet_profile" /> <!-- Activity declarations -->
         <activity
             android:name=".Book_AppointmnetActivity"
             android:exported="false" />
@@ -43,14 +68,13 @@
             android:exported="false" />
         <activity
             android:name=".LogInActivity"
-            android:exported="false" />
-
-        <!-- Main Activity (Launcher activity) -->
+            android:exported="false" /> <!-- Main Activity (Launcher activity) -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -3,5 +3,5 @@
     <corners android:radius="20dp" />
     <solid android:color="#FF7D41" /> <!-- Orange background color -->
 
-    <stroke android:width="2dp" android:color="@color/black" /> <!-- Border with the desired corner color -->
+
 </shape>
