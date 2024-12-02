@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF6E9"
+    tools:ignore="ExtraText"
+    tools:context=".edit_petActivity">
+
+
+    <!-- Left Arrow Image -->
+    <ImageView
+        android:id="@+id/leftArrow"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="@string/back"
+        android:src="@drawable/left_arrow_black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:layout_width="276dp"
+        android:layout_height="63dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/violet_rectangle"
+        android:rotation="6.07"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.091" />
+
+    <View
+        android:layout_width="276dp"
+        android:layout_height="63dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/rounded_rectangle"
+        android:rotation="-4.48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.091" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="91dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="center"
+        android:text="Pet Details"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_gravity="start"
+        android:hint="Name"
+        android:background="@drawable/et_blue"
+        android:drawableStart="@drawable/pet_name"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="start|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="31dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:hintTextColor="@color/gray"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="204dp" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_gravity="start"
+        android:background="@drawable/et_blue"
+        android:drawableStart="@drawable/dob_calendar"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="start|center_vertical"
+        android:inputType="date"
+        android:hint="Birth of date"
+        android:hintTextColor="@color/gray"
+        android:paddingStart="20dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="31dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="274dp" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_gravity="start"
+        android:background="@drawable/et_blue"
+        android:drawableStart="@drawable/footprint_small"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="start|center_vertical"
+        android:hint="Breed"
+        android:hintTextColor="@color/gray"
+        android:paddingStart="20dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="31dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="342dp" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_gravity="start"
+        android:background="@drawable/et_blue"
+        android:drawableStart="@drawable/color"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="start|center_vertical"
+        android:hint="Color"
+        android:hintTextColor="@color/gray"
+        android:paddingStart="20dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="31dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="415dp" />
+
+    <TextView
+        android:id="@+id/textView61"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="center"
+        android:text="Gender?"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="498dp" />
+
+    <CheckBox
+        android:id="@+id/checkBoxF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/female"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="557dp" />
+
+    <CheckBox
+        android:id="@+id/checkBoxM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/male"
+        tools:ignore="DuplicateIds,MissingConstraints"
+        tools:layout_editor_absoluteX="257dp"
+        tools:layout_editor_absoluteY="557dp" />
+
+    <CheckBox
+        android:id="@+id/checkBoxIndoor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/indoor"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="Indoor"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        tools:ignore="DuplicateIds,MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="623dp" />
+
+    <CheckBox
+        android:id="@+id/checkBoxOutdoor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/outdoor"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="Outdoor"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        tools:ignore="DuplicateIds,MissingConstraints"
+        tools:layout_editor_absoluteX="238dp"
+        tools:layout_editor_absoluteY="619dp" />
+
+    <TextView
+        android:id="@+id/textView62"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="center"
+        android:text="Is your pet Neutered/Spayed"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="676dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="Yes"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="712dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="No"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="238dp"
+        tools:layout_editor_absoluteY="712dp" />
+
+    <Button
+        android:id="@+id/button21"
+        android:layout_width="333dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_background2"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="Save"
+        android:textColor="#ffff"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="772dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
