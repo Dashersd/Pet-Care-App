@@ -9,7 +9,16 @@
     tools:ignore="ExtraText"
     tools:context=".pet_detailsActivity">
 
-    <!-- Left Arrow Image -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Left Arrow Image -->
     <ImageView
         android:id="@+id/leftArrow"
         android:layout_width="100dp"
@@ -21,32 +30,36 @@
         tools:ignore="MissingConstraints" />
 
     <!-- Edit Text -->
-    <TextView
-        android:id="@+id/textView47"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/crimson_text_semibold"
-        android:gravity="center"
-        android:text="@string/edit"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="361dp"
-        tools:layout_editor_absoluteY="29dp" />
 
 
-    <View
-        android:layout_width="276dp"
-        android:layout_height="63dp"
-        android:layout_margin="16dp"
-        android:background="@drawable/blue_rectangle"
-        android:rotation="6.07"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.054" />
+            <TextView
+                android:id="@+id/textView47"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/crimson_text_semibold"
+                android:gravity="center"
+                android:text="@string/edit"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="276dp"
+                android:layout_height="63dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/blue_rectangle"
+                android:rotation="6.07"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.054" />
 
     <View
         android:layout_width="276dp"
@@ -69,7 +82,7 @@
         android:layout_marginTop="61dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:gravity="center"
-        android:text="Pet Details"
+        android:text="@string/pet_details"
         android:textColor="#FFFFFF"
         android:textSize="38sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,317 +90,347 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_margin="16dp"
-        android:background="@drawable/circle_with_border"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="144dp" >
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/circle_with_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view5"
+                tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:id="@+id/cat_footprint"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="17dp"
-            android:contentDescription="Pet Deatails"
-            android:src="@drawable/cat_footprint"
-            tools:ignore="HardcodedText,MissingConstraints" />
-    </FrameLayout>
+                <ImageView
+                    android:id="@+id/cat_footprint"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="17dp"
+                    android:contentDescription="Pet Deatails"
+                    android:src="@drawable/cat_footprint"
+                    tools:ignore="HardcodedText,MissingConstraints" />
+            </FrameLayout>
 
-    <FrameLayout
-        android:layout_width="360dp"
-        android:layout_height="535dp"
-        android:background="@drawable/rectangle_with_border"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="309dp">
+            <FrameLayout
+                android:layout_width="353dp"
+                android:layout_height="527dp"
+                android:layout_marginTop="72dp"
+                android:background="@drawable/rectangle_with_border"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="28dp">
 
 
-        <TextView
-            android:id="@+id/textView48"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:text="Name"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:layout_gravity="start"
-            android:paddingTop="5dp"
-            android:paddingStart="20dp"
-            />
+                <TextView
+                    android:id="@+id/textView48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/name"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    tools:ignore="RtlSymmetry" />
 
-        <EditText
-            android:layout_width="260dp"
-            android:layout_height="35dp"
-            android:layout_gravity="start"
-            android:layout_marginTop="25dp"
-            android:layout_marginStart="83dp"
-            android:autofillHints=""
-            android:background="@drawable/round_background4"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:paddingTop="5dp"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+                <EditText
+                    android:id="@+id/textPet_Name"
+                    android:layout_width="260dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="83dp"
+                    android:layout_marginTop="25dp"
+                    android:autofillHints=""
+                    android:background="@drawable/round_background4"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor,TextFields" />
 
-        <TextView
-            android:id="@+id/textView49"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:text="Gender"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:layout_gravity="start"
-            android:paddingTop="55dp"
-            android:paddingStart="20dp"/>
+                <TextView
+                    android:id="@+id/textView49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:paddingTop="55dp"
+                    android:text="@string/gender"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    tools:ignore="RtlSymmetry" />
 
-        <EditText
-            android:layout_width="245dp"
-            android:layout_height="35dp"
-            android:layout_gravity="start"
-            android:layout_marginTop="75dp"
-            android:layout_marginStart="98dp"
-            android:autofillHints=""
-            android:background="@drawable/round_background4"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:paddingTop="5dp"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+                <EditText
+                    android:id="@+id/textPet_Gender"
+                    android:layout_width="245dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="98dp"
+                    android:layout_marginTop="75dp"
+                    android:autofillHints=""
+                    android:background="@drawable/round_background4"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor,TextFields" />
 
-        <TextView
-            android:id="@+id/textView50"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:text="Breed"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:layout_gravity="start"
-            android:paddingTop="105dp"
-            android:paddingStart="20dp"/>
+                <TextView
+                    android:id="@+id/textView50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:paddingTop="105dp"
+                    android:text="@string/breed"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    tools:ignore="RtlSymmetry" />
 
-        <EditText
-            android:layout_width="265dp"
-            android:layout_height="35dp"
-            android:layout_gravity="start"
-            android:layout_marginTop="125dp"
-            android:layout_marginStart="80dp"
-            android:autofillHints=""
-            android:background="@drawable/round_background4"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+                <EditText
+                    android:id="@+id/textPet_Breed"
+                    android:layout_width="265dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginTop="125dp"
+                    android:autofillHints=""
+                    android:background="@drawable/round_background4"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor,TextFields" />
 
-        <TextView
-            android:id="@+id/textView51"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:text="Color"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:layout_gravity="start"
-            android:paddingTop="155dp"
-            android:paddingStart="20dp"/>
+                <TextView
+                    android:id="@+id/textView61"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:paddingTop="155dp"
+                    android:text="@string/color"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    tools:ignore="RtlSymmetry" />
 
-        <EditText
-            android:layout_width="265dp"
-            android:layout_height="35dp"
-            android:layout_gravity="start"
-            android:layout_marginTop="175dp"
-            android:layout_marginStart="80dp"
-            android:autofillHints=""
-            android:background="@drawable/round_background4"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+                <EditText
+                    android:id="@+id/textPet_Color"
+                    android:layout_width="265dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginTop="175dp"
+                    android:autofillHints=""
+                    android:background="@drawable/round_background4"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor,TextFields" />
 
-        <TextView
-            android:id="@+id/textView51"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:text="Date of Birth"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:layout_gravity="start"
-            android:paddingTop="205dp"
-            android:paddingStart="20dp"/>
+                <TextView
+                    android:id="@+id/textView51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:paddingTop="205dp"
+                    android:text="@string/date_of_birth"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    tools:ignore="RtlSymmetry" />
 
-        <EditText
-            android:layout_width="195dp"
-            android:layout_height="35dp"
-            android:layout_gravity="start"
-            android:layout_marginTop="225dp"
-            android:layout_marginStart="150dp"
-            android:autofillHints=""
-            android:background="@drawable/round_background4"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:inputType="date"
-            android:hint="MM/DD/YYYY"
-            android:focusable="false"
-            android:clickable="true" />
+                <EditText
+                    android:id="@+id/textPet_Birth"
+                    android:layout_width="195dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="225dp"
+                    android:autofillHints=""
+                    android:background="@drawable/round_background4"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:inputType="date"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor" />
 
-        <TextView
-            android:id="@+id/textView53"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="270dp"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:text="Age"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:layout_gravity="start"
-            android:paddingStart="20dp"/>
+                <TextView
+                    android:id="@+id/textView53"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="270dp"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:text="@string/age"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    tools:ignore="RtlSymmetry" />
 
-        <EditText
-            android:layout_width="280dp"
-            android:layout_height="35dp"
-            android:layout_gravity="start"
-            android:layout_marginTop="275dp"
-            android:layout_marginStart="65dp"
-            android:autofillHints=""
-            android:background="@drawable/round_background4"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:hint="Days"
-            android:focusable="false"
-            android:clickable="true" />
+                <EditText
+                    android:id="@+id/textPet_Age"
+                    android:layout_width="280dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="275dp"
+                    android:autofillHints=""
+                    android:background="@drawable/round_background4"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor,TextFields" />
 
-        <TextView
-            android:id="@+id/textView54"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="325dp"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:text="Age in Weeks"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:layout_gravity="start"
-            android:paddingStart="20dp"/>
+                <TextView
+                    android:id="@+id/textView54"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="325dp"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:text="@string/age_in_weeks"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    tools:ignore="RtlSymmetry" />
 
-        <EditText
-            android:layout_width="185dp"
-            android:layout_height="35dp"
-            android:layout_gravity="start"
-            android:layout_marginTop="325dp"
-            android:layout_marginStart="160dp"
-            android:autofillHints=""
-            android:background="@drawable/round_background4"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:focusable="false"
-            android:clickable="true" />
+                <EditText
+                    android:layout_width="185dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="160dp"
+                    android:layout_marginTop="325dp"
+                    android:autofillHints=""
+                    android:background="@drawable/round_background4"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor,TextFields" />
 
-        <TextView
-            android:id="@+id/textView55"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="375dp"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:text="Age in Year"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:layout_gravity="start"
-            android:paddingStart="20dp"/>
+                <TextView
+                    android:id="@+id/textView55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="375dp"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:text="@string/age_in_year"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    tools:ignore="RtlSymmetry" />
 
-        <EditText
-            android:layout_width="205dp"
-            android:layout_height="35dp"
-            android:layout_gravity="start"
-            android:layout_marginTop="375dp"
-            android:layout_marginStart="140dp"
-            android:autofillHints=""
-            android:background="@drawable/round_background4"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:focusable="false"
-            android:clickable="true" />
+                <EditText
+                    android:layout_width="205dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="140dp"
+                    android:layout_marginTop="375dp"
+                    android:autofillHints=""
+                    android:background="@drawable/round_background4"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor,TextFields" />
 
-        <TextView
-            android:id="@+id/textView56"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="425dp"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:text="Neutered"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:layout_gravity="start"
-            android:paddingStart="20dp"/>
+                <TextView
+                    android:id="@+id/textView56"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="425dp"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:text="@string/neutered"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    tools:ignore="RtlSymmetry" />
 
-        <EditText
-            android:layout_width="225dp"
-            android:layout_height="35dp"
-            android:layout_gravity="start"
-            android:layout_marginTop="425dp"
-            android:layout_marginStart="120dp"
-            android:autofillHints=""
-            android:background="@drawable/round_background4"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:hint="Yes or No?"
-            android:focusable="false"
-            android:clickable="true" />
+                <EditText
+                    android:id="@+id/textNeutered"
+                    android:layout_width="225dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="425dp"
+                    android:autofillHints=""
+                    android:background="@drawable/round_background4"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor,TextFields" />
 
-        <TextView
-            android:id="@+id/textView57"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="475dp"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:text="Indoor"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:layout_gravity="start"
-            android:paddingStart="20dp"/>
+                <TextView
+                    android:id="@+id/textView57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="475dp"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:text="@string/indoor"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    tools:ignore="RtlSymmetry" />
 
-        <EditText
-            android:layout_width="250dp"
-            android:layout_height="35dp"
-            android:layout_gravity="start"
-            android:layout_marginTop="475dp"
-            android:layout_marginStart="95dp"
-            android:autofillHints=""
-            android:background="@drawable/round_background4"
-            android:fontFamily="@font/crimson_text_semibold"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:focusable="false"
-            android:clickable="true" />
-    </FrameLayout>
+                <EditText
+                    android:layout_width="250dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="95dp"
+                    android:layout_marginTop="475dp"
+                    android:autofillHints=""
+                    android:background="@drawable/round_background4"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:fontFamily="@font/crimson_text_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:ignore="LabelFor,TextFields" />
+            </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

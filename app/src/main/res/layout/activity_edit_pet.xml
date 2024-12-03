@@ -100,6 +100,7 @@
         android:fontFamily="@font/crimson_text_semibold"
         android:gravity="start|center_vertical"
         android:hint="@string/birth_of_date"
+        android:importantForAutofill="no"
         android:inputType="date"
         android:paddingStart="20dp"
         android:paddingTop="5dp"
@@ -111,7 +112,7 @@
         app:layout_constraintEnd_toEndOf="@+id/editText4"
         app:layout_constraintStart_toStartOf="@+id/editText4"
         app:layout_constraintTop_toBottomOf="@+id/editText4"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="Autofill,MissingConstraints" />
 
     <EditText
         android:id="@+id/editText6"
@@ -264,7 +265,8 @@
         android:textColor="#ffff"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="772dp" />
+        tools:layout_editor_absoluteY="772dp"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
