@@ -28,4 +28,34 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="policy_number">Policy Number</string>
+    <string name="insured_date">Insured date</string>
+    <string name="provider_of_insurance">Provider of Insurance</string>
+    <string name="insurance_details">Insurance Details</string>
+    <string name="coverage_amount">Coverage Amount</string>
+    <string name="payment_frequency">Payment Frequency</string>
+    <string name="save">Save</string>
+    <string name="issuing_location">Issuing Location</string>
+    <string name="license_id">License ID</string>
+    <string name="license_details">License Details</string>
+    <string name="date_of_issuance">Date of Issuance</string>
+    <string name="renewal_date">Renewal Date</string>
+    <string name="chip_id">Chip ID</string>
+    <string name="microchip_provider">Microchip Provider</string>
+    <string name="microchip_details">Microchip Details</string>
+    <string name="date_of_microchipping">Date of Microchipping</string>
+    <string name="birth_of_date">Birth of date</string>
+    <string name="color">Color</string>
+    <string name="breed">Breed</string>
+    <string name="name">Name</string>
+    <string name="pet_details">Pet Details</string>
+    <string name="gender">Gender?</string>
+    <string name="indoor">Indoor</string>
+    <string name="outdoor">Outdoor</string>
+    <string name="is_your_pet_neutered_spayed">Is your pet Neutered/Spayed</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="license">License</string>
+    <string name="insurance">Insurance</string>
+    <string name="microchip">Microchip</string>
 </resources>

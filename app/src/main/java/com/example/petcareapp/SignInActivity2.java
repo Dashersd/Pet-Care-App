@@ -29,12 +29,23 @@ public class SignInActivity2 extends AppCompatActivity {
     EditText petNameEditText, dateOfBirthEditText, breedEditText;
     CheckBox maleCheckBox, femaleCheckBox;
     private DatabaseReference mDatabase;
+    private String name, email, userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_sign_in2);
+
+        // Retrieve data from Intent
+        Intent intent = getIntent();
+        name = intent.getStringExtra("name");
+        email = intent.getStringExtra("email");
+
+        // Ensure Firebase Authentication is initialized
+        userId = FirebaseAuth.getInstance().getCurrentUser() != null
+                ? FirebaseAuth.getInstance().getCurrentUser().getUid()
+                : null;
 
         // Initialize Firebase Database
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -47,81 +58,56 @@ public class SignInActivity2 extends AppCompatActivity {
         maleCheckBox = findViewById(R.id.MalecheckBox);
         femaleCheckBox = findViewById(R.id.FemalecheckBox2);
 
-        // Setup window insets
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
         // Spinner setup for pet options
         String[] petOptions = {"Select an option...", "Dog", "Cat"};
-        ArrayAdapter<String> petAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, petOptions) {
-            @Override
-            public boolean isEnabled(int position) {
-                return position != 0;  // Disable the first item (hint)
-            }
-
-            @Override
-            public View getDropDownView(int position, View convertView, ViewGroup parent) {
-                View view = super.getDropDownView(position, convertView, parent);
-                TextView tv = (TextView) view;
-                if (position == 0) {
-                    tv.setTextColor(Color.GRAY);  // Hint item color
-                } else {
-                    tv.setTextColor(Color.BLACK);  // Regular item color
-                }
-                return view;
-            }
-        };
+        ArrayAdapter<String> petAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, petOptions);
         petAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         petSpinner.setAdapter(petAdapter);
 
-        // Handle the button click to save data and go to DashboardActivity
+        // Save Pet Information
         Button button = findViewById(R.id.button5);
         button.setOnClickListener(v -> {
-            // Get the data from user input
+            if (userId == null) {
+                Toast.makeText(SignInActivity2.this, "User not authenticated!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             String petName = petNameEditText.getText().toString().trim();
             String dateOfBirth = dateOfBirthEditText.getText().toString().trim();
             String breed = breedEditText.getText().toString().trim();
             String petType = petSpinner.getSelectedItem().toString();
-            String gender = "";
+            String gender = maleCheckBox.isChecked() ? "Male" : femaleCheckBox.isChecked() ? "Female" : "";
 
-            // Determine gender based on checkbox selection
-            if (maleCheckBox.isChecked()) {
-                gender = "Male";
-            } else if (femaleCheckBox.isChecked()) {
-                gender = "Female";
-            }
-
-            // Validation check
             if (petName.isEmpty() || dateOfBirth.isEmpty() || breed.isEmpty() || petType.equals("Select an option...") || gender.isEmpty()) {
                 Toast.makeText(SignInActivity2.this, "Please fill all fields!", Toast.LENGTH_SHORT).show();
             } else {
-                // Retrieve current user ID from Firebase Authentication
-                String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
-                // Create a unique pet ID (you can use a unique ID generator or Firebase push ID)
                 String petId = mDatabase.child("users").child(userId).child("petInformation").push().getKey();
 
-                // Create User object and add pet information
-                User user = new User(userId, "User Name", "user@example.com"); // Replace with actual user data
-                user.addPet(petId, petName, dateOfBirth, gender, breed, petType);
+                DatabaseReference petRef = mDatabase.child("users").child(userId).child("petInformation").child(petId);
+                petRef.child("petName").setValue(petName);
+                petRef.child("dob").setValue(dateOfBirth);
+                petRef.child("gender").setValue(gender);
+                petRef.child("breed").setValue(breed);
+                petRef.child("petType").setValue(petType);
 
-                // Store user data in Firebase
-                mDatabase.child("users").child(userId).setValue(user);
-
-                // Navigate to DashboardActivity
-                Intent intent = new Intent(SignInActivity2.this, DashboardActivity.class);
-                startActivity(intent);
+                Intent intentToDashboard = new Intent(SignInActivity2.this, DashboardActivity.class);
+                startActivity(intentToDashboard);
+                finish();
             }
         });
 
-        // Handle TextView click to navigate to DashboardActivity (Skip button)
+        // Skip button
         TextView skipTextView = findViewById(R.id.textView17);
         skipTextView.setOnClickListener(v -> {
-            Intent intent = new Intent(SignInActivity2.this, DashboardActivity.class);
-            startActivity(intent);
+            if (userId != null) {
+                // Ensure basic user data is saved before skipping
+                mDatabase.child("users").child(userId).child("name").setValue(name);
+                mDatabase.child("users").child(userId).child("email").setValue(email);
+            }
+
+            Intent intentToDashboard = new Intent(SignInActivity2.this, DashboardActivity.class);
+            startActivity(intentToDashboard);
+            finish();
         });
     }
 }

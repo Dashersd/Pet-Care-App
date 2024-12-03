@@ -92,8 +92,8 @@
             android:layout_height="110dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="18dp"
-            android:contentDescription="License Deatails"
-            android:src="@drawable/License"
+            android:contentDescription="License Details"
+            android:src="@drawable/license_id"
             tools:ignore="HardcodedText,MissingConstraints" />
     </FrameLayout>
 
@@ -114,12 +114,12 @@
             android:layout_marginStart="10dp"
             android:fontFamily="@font/crimson_text_semibold"
             android:gravity="center"
-            android:text="License ID:"
+            android:text="@string/license_id"
             android:textColor="#000000"
             android:textSize="26sp"
             android:layout_gravity="start"
             android:paddingStart="20dp"
-            />
+            tools:ignore="RtlSymmetry" />
 
         <EditText
             android:layout_width="320dp"
@@ -133,7 +133,8 @@
             android:gravity="center"
             android:paddingTop="5dp"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="LabelFor,TextFields" />
 
         <TextView
             android:id="@+id/textView52"
@@ -143,11 +144,12 @@
             android:layout_marginStart="10dp"
             android:fontFamily="@font/crimson_text_semibold"
             android:gravity="center"
-            android:text="Issuing Location:"
+            android:text="@string/issuing_location"
             android:textColor="#000000"
             android:textSize="26sp"
             android:layout_gravity="start"
-            android:paddingStart="20dp"/>
+            android:paddingStart="20dp"
+            tools:ignore="RtlSymmetry" />
 
         <EditText
             android:layout_width="320dp"
@@ -161,7 +163,8 @@
             android:gravity="center"
             android:paddingTop="5dp"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="LabelFor,TextFields" />
 
         <TextView
             android:id="@+id/textView58"
@@ -171,11 +174,12 @@
             android:layout_marginStart="10dp"
             android:fontFamily="@font/crimson_text_semibold"
             android:gravity="center"
-            android:text="Date of Issuance:"
+            android:text="@string/date_of_issuance"
             android:textColor="#000000"
             android:textSize="26sp"
             android:layout_gravity="start"
-            android:paddingStart="20dp"/>
+            android:paddingStart="20dp"
+            tools:ignore="RtlSymmetry" />
 
         <EditText
             android:layout_width="320dp"
@@ -189,7 +193,8 @@
             android:gravity="center"
             android:paddingTop="5dp"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="LabelFor,TextFields" />
 
         <TextView
             android:id="@+id/textView59"
@@ -199,11 +204,12 @@
             android:layout_marginStart="10dp"
             android:fontFamily="@font/crimson_text_semibold"
             android:gravity="center"
-            android:text="Renewal Date:"
+            android:text="@string/renewal_date"
             android:textColor="#000000"
             android:textSize="26sp"
             android:layout_gravity="start"
-            android:paddingStart="20dp"/>
+            android:paddingStart="20dp"
+            tools:ignore="RtlSymmetry" />
 
         <EditText
             android:layout_width="320dp"
@@ -217,6 +223,7 @@
             android:gravity="center"
             android:paddingTop="5dp"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="LabelFor,TextFields" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -57,19 +57,30 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    // Fetch user name
+                    // Fetch user name from the main user node (fallback)
                     String userName = dataSnapshot.child("name").getValue(String.class);
-                    userNameTextView.setText("Hello, " + userName);
 
-                    // Fetch pet details (assuming one pet here; update for multiple pets as needed)
+                    // Check if petInformation exists
                     if (dataSnapshot.hasChild("petInformation")) {
                         DataSnapshot petSnapshot = dataSnapshot.child("petInformation").getChildren().iterator().next();
+
+                        // Attempt to fetch userName from petInformation
+                        String petUserName = petSnapshot.child("userName").getValue(String.class);
+                        if (petUserName != null) {
+                            userName = petUserName; // Use the userName from petInformation if available
+                        }
+
+                        // Fetch pet details
                         String petName = petSnapshot.child("petName").getValue(String.class);
                         String petBreed = petSnapshot.child("breed").getValue(String.class);
 
-                        petNameTextView.setText(petName);
-                        petBreedTextView.setText(petBreed);
+                        // Update UI
+                        if (userName != null) userNameTextView.setText("Hello, " + userName);
+                        if (petName != null) petNameTextView.setText(petName);
+                        if (petBreed != null) petBreedTextView.setText(petBreed);
                     } else {
+                        // If no pet information exists, fallback to main userName
+                        if (userName != null) userNameTextView.setText("Hello, " + userName);
                         Toast.makeText(DashboardActivity.this, "No pet information found", Toast.LENGTH_SHORT).show();
                     }
                 } else {
@@ -99,6 +110,16 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DashboardActivity.this, AppoinmentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Setup button8 click to navigate to PetProfileActivity
+        Button button8 = findViewById(R.id.button8);
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashboardActivity.this, pet_profileActivity.class);
                 startActivity(intent);
             }
         });
