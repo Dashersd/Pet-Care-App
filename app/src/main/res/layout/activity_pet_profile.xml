@@ -128,7 +128,7 @@
                 android:id="@+id/buttonInsurance"
                 android:layout_width="333dp"
                 android:layout_height="90dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:background="@drawable/button_background"
                 android:drawableStart="@drawable/insurance"
                 android:drawablePadding="10dp"
@@ -139,6 +139,7 @@
                 android:textColor="#000000"
                 android:textSize="33sp"
                 app:layout_constraintEnd_toEndOf="@+id/buttonMicrochip"
+                app:layout_constraintHorizontal_bias="0.138"
                 app:layout_constraintStart_toStartOf="@+id/buttonMicrochip"
                 app:layout_constraintTop_toBottomOf="@+id/buttonMicrochip" />
 

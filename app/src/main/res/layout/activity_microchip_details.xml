@@ -21,21 +21,25 @@
         tools:ignore="MissingConstraints" />
 
     <!-- Edit Text -->
+
+
     <TextView
         android:id="@+id/textView47"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:gravity="center"
         android:text="@string/edit"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="361dp"
-        tools:layout_editor_absoluteY="29dp" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <View
+        android:id="@+id/view6"
         android:layout_width="276dp"
         android:layout_height="63dp"
         android:layout_margin="16dp"
@@ -78,13 +82,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
+        android:id="@+id/frameLayout2"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_margin="16dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/circle_with_border"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="144dp" >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view6"
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/cat_footprint"
@@ -100,33 +108,33 @@
     <FrameLayout
         android:layout_width="360dp"
         android:layout_height="300dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/rectangle_with_border"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="309dp">
+        tools:layout_editor_absoluteX="25dp">
 
 
         <TextView
             android:id="@+id/textView48"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_gravity="start"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/crimson_text_semibold"
             android:gravity="center"
+            android:paddingStart="20dp"
             android:text="Microchip Provide:"
             android:textColor="#000000"
-            android:textSize="26sp"
-            android:layout_gravity="start"
-            android:paddingStart="20dp"
-            />
+            android:textSize="26sp" />
 
         <EditText
             android:layout_width="320dp"
             android:layout_height="35dp"
             android:layout_gravity="start"
-            android:layout_marginTop="60dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
             android:autofillHints=""
             android:background="@drawable/round_background4"
             android:fontFamily="@font/crimson_text_semibold"
@@ -139,22 +147,22 @@
             android:id="@+id/textView52"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="110dp"
+            android:layout_gravity="start"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="110dp"
             android:fontFamily="@font/crimson_text_semibold"
             android:gravity="center"
+            android:paddingStart="20dp"
             android:text="Chip ID:"
             android:textColor="#000000"
-            android:textSize="26sp"
-            android:layout_gravity="start"
-            android:paddingStart="20dp"/>
+            android:textSize="26sp" />
 
         <EditText
             android:layout_width="320dp"
             android:layout_height="35dp"
             android:layout_gravity="start"
-            android:layout_marginTop="150dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="150dp"
             android:autofillHints=""
             android:background="@drawable/round_background4"
             android:fontFamily="@font/crimson_text_semibold"
@@ -167,22 +175,22 @@
             android:id="@+id/textView58"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
+            android:layout_gravity="start"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="200dp"
             android:fontFamily="@font/crimson_text_semibold"
             android:gravity="center"
+            android:paddingStart="20dp"
             android:text="Date of Microchipping:"
             android:textColor="#000000"
-            android:textSize="26sp"
-            android:layout_gravity="start"
-            android:paddingStart="20dp"/>
+            android:textSize="26sp" />
 
         <EditText
             android:layout_width="320dp"
             android:layout_height="35dp"
             android:layout_gravity="start"
-            android:layout_marginTop="240dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="240dp"
             android:autofillHints=""
             android:background="@drawable/round_background4"
             android:fontFamily="@font/crimson_text_semibold"

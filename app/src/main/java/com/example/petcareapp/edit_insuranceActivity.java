@@ -1,6 +1,8 @@
 package com.example.petcareapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,12 @@ public class edit_insuranceActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        // Set up leftArrow to open DashboardActivity
+        ImageView leftArrow = findViewById(R.id.leftArrow);
+        leftArrow.setOnClickListener(v -> {
+            Intent intent = new Intent(edit_insuranceActivity.this, insurance_detailsActivity.class);
+            startActivity(intent);
         });
     }
 }

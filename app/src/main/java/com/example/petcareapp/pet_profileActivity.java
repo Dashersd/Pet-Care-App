@@ -39,5 +39,18 @@ public class pet_profileActivity extends AppCompatActivity {
             Intent intent = new Intent(pet_profileActivity.this, DashboardActivity.class);
             startActivity(intent);
         });
+        // Set up button to open PetDetailsActivity
+        Button buttonMicrochip = findViewById(R.id.buttonMicrochip);
+        buttonMicrochip .setOnClickListener(v -> {
+            Intent intent = new Intent(pet_profileActivity.this, microchip_detailsActivity.class);
+            startActivity(intent);
+        });
+
+        // Set up button to open PetDetailsActivity
+        Button buttonInsurance= findViewById(R.id.buttonInsurance);
+        buttonInsurance .setOnClickListener(v -> {
+            Intent intent = new Intent(pet_profileActivity.this, insurance_detailsActivity.class);
+            startActivity(intent);
+        });
     }
 }
