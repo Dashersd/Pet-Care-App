@@ -37,6 +37,15 @@ public class AppoinmentActivity extends AppCompatActivity {
                 "17", "18", "19", "20", "21", "22", "23",
                 "24", "25", "26", "27", "28", "29", "30"
         };
+        ImageView backArrow = findViewById(R.id.back_arrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AppoinmentActivity.this, DashboardActivity.class);
+                startActivity(intent);
+                finish(); // Optional: Close the current activity
+            }
+        });
 
         // Populate the calendar dynamically
         for (String day : days) {
