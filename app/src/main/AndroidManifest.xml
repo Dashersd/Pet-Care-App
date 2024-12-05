@@ -15,6 +15,21 @@
         android:theme="@style/Theme.PetCareApp"
         tools:targetApi="31">
         <activity
+            android:name=".vaccine_detailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".repeat_schedule_vaccineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".once_schedule_vaccineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Schedule_vaccineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".add_vaccineActivity"
+            android:exported="false" />
+        <activity
             android:name=".vaccineActivity"
             android:exported="false" />
         <activity
