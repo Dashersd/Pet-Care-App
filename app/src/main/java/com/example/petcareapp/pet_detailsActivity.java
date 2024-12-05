@@ -48,6 +48,13 @@ public class pet_detailsActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        // Set up textView47 to open EditPetActivity
+        TextView textView47 = findViewById(R.id.textView47);
+        textView47.setOnClickListener(v -> {
+            Intent intent = new Intent(pet_detailsActivity.this, edit_petActivity.class);
+            startActivity(intent);
+        });
+
         // Fetch and display pet information
         fetchPetDetails();
     }
