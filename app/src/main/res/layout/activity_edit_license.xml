@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF6E9"
-    tools:ignore="ExtraText"
-    tools:context=".edit_licenseActivity">
+    tools:context=".edit_licenseActivity"
+    tools:ignore="ExtraText">
 
     <!-- Left Arrow Image -->
     <ImageView
@@ -16,11 +16,12 @@
         android:layout_height="100dp"
         android:contentDescription="@string/back"
         android:src="@drawable/left_arrow_black"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <View
+        android:id="@+id/view10"
         android:layout_width="276dp"
         android:layout_height="63dp"
         android:layout_margin="16dp"
@@ -63,58 +64,67 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/editText13"
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_gravity="start"
+        android:layout_marginTop="68dp"
         android:background="@drawable/et_blue"
         android:drawableStart="@drawable/license_id"
         android:drawablePadding="10dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:gravity="start|center_vertical"
         android:hint="@string/license_id"
-        android:textColorHint="#808080"
         android:paddingStart="20dp"
         android:paddingTop="5dp"
         android:paddingEnd="31dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/black"
+        android:textColorHint="#808080"
         android:textSize="24sp"
-        tools:ignore="Autofill,MissingConstraints,TextFields"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="231dp" />
+        app:layout_constraintEnd_toEndOf="@+id/view10"
+        app:layout_constraintHorizontal_bias="0.378"
+        app:layout_constraintStart_toStartOf="@+id/view10"
+        app:layout_constraintTop_toBottomOf="@+id/view10"
+        tools:ignore="Autofill,MissingConstraints,TextFields" />
 
     <EditText
+        android:id="@+id/editText14"
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_gravity="start"
+        android:layout_marginTop="32dp"
         android:background="@drawable/et_blue"
         android:drawableStart="@drawable/location"
         android:drawablePadding="10dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:gravity="start|center_vertical"
         android:hint="@string/issuing_location"
-        android:textColorHint="#808080"
         android:paddingStart="20dp"
         android:paddingTop="5dp"
         android:paddingEnd="31dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/black"
+        android:textColorHint="#808080"
         android:textSize="24sp"
-        tools:ignore="Autofill,MissingConstraints,TextFields"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="333dp" />
+        app:layout_constraintEnd_toEndOf="@+id/editText13"
+        app:layout_constraintHorizontal_bias="0.274"
+        app:layout_constraintStart_toStartOf="@+id/editText13"
+        app:layout_constraintTop_toBottomOf="@+id/editText13"
+        tools:ignore="Autofill,MissingConstraints,TextFields" />
 
     <EditText
+        android:id="@+id/editText16"
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_gravity="start"
+        android:layout_marginTop="20dp"
         android:background="@drawable/et_blue"
         android:drawableStart="@drawable/dob_calendar"
         android:drawablePadding="10dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:gravity="start|center_vertical"
         android:hint="@string/date_of_issuance"
-        android:textColorHint="#808080"
         android:importantForAutofill="no"
         android:inputType="date"
         android:paddingStart="20dp"
@@ -122,22 +132,26 @@
         android:paddingEnd="31dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/black"
+        android:textColorHint="#808080"
         android:textSize="24sp"
-        tools:ignore="Autofill,MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="549dp" />
+        app:layout_constraintEnd_toEndOf="@+id/editText15"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toStartOf="@+id/editText15"
+        app:layout_constraintTop_toBottomOf="@+id/editText15"
+        tools:ignore="Autofill,MissingConstraints" />
 
     <EditText
+        android:id="@+id/editText15"
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_gravity="start"
+        android:layout_marginTop="28dp"
         android:background="@drawable/et_blue"
         android:drawableStart="@drawable/dob_calendar"
         android:drawablePadding="10dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:gravity="start|center_vertical"
         android:hint="@string/renewal_date"
-        android:textColorHint="#808080"
         android:importantForAutofill="no"
         android:inputType="date"
         android:paddingStart="20dp"
@@ -145,21 +159,27 @@
         android:paddingEnd="31dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/black"
+        android:textColorHint="#808080"
         android:textSize="24sp"
-        tools:ignore="Autofill,MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="439dp" />
+        app:layout_constraintEnd_toEndOf="@+id/editText14"
+        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintStart_toStartOf="@+id/editText14"
+        app:layout_constraintTop_toBottomOf="@+id/editText14"
+        tools:ignore="Autofill,MissingConstraints" />
 
     <Button
         android:id="@+id/button23"
-        android:layout_width="333dp"
+        android:layout_width="350dp"
         android:layout_height="60dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/btn_background2"
         android:fontFamily="@font/crimson_text_bold"
         android:text="@string/save"
         android:textColor="#ffff"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="676dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.628"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText16"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
