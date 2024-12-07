@@ -21,6 +21,7 @@
 
 
     <View
+        android:id="@+id/view11"
         android:layout_width="276dp"
         android:layout_height="63dp"
         android:layout_margin="16dp"
@@ -62,37 +63,42 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/editText17"
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_gravity="start"
+        android:layout_marginTop="88dp"
         android:background="@drawable/et_blue"
         android:drawableStart="@drawable/dob_calendar"
         android:drawablePadding="10dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:gravity="start|center_vertical"
         android:hint="Date of Vaccination"
-        android:hintTextColor="@color/gray"
         android:inputType="date"
         android:paddingStart="20dp"
         android:paddingTop="5dp"
         android:paddingEnd="31dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/black"
+        android:textColorHint="@color/gray"
         android:textSize="24sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="301dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view11"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button23"
         android:layout_width="270dp"
         android:layout_height="60dp"
+        android:layout_marginTop="116dp"
         android:background="@drawable/btn_background2"
         android:fontFamily="@font/crimson_text_bold"
         android:text="Save"
         android:textColor="#ffff"
         android:textSize="25sp"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="410dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/editText17"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="70dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

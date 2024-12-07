@@ -19,38 +19,47 @@ public class Clinic_SelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_clinic_selection);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        ImageView imageView = findViewById(R.id.imageView36);
 
+        ImageView imageView = findViewById(R.id.imageView36);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Open the new activity
+                // Open the AppoinmentActivity
                 Intent intent = new Intent(Clinic_SelectionActivity.this, AppoinmentActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button button = findViewById(R.id.view_profile_button_1);
-// Set an OnClickListener for the button
-        button.setOnClickListener(new View.OnClickListener() {
+        Button viewProfileButton = findViewById(R.id.view_profile_button_1);
+        viewProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Open the Clinic_ProfileActivity
                 Intent intent = new Intent(Clinic_SelectionActivity.this, Clinic_ProfileActivity.class);
                 startActivity(intent);
             }
         });
-        Button button1 = findViewById(R.id.book_appointment_button_1);
-        // Set an OnClickListener for the button
-        button1.setOnClickListener(new View.OnClickListener() {
+
+        Button bookAppointmentButton = findViewById(R.id.book_appointment_button_1);
+        bookAppointmentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create an Intent to navigate to the MainActivity5
+                // Get the clinic name (hardcoded or fetched dynamically)
+                String clinicName = "Happy Paws Veterinary Clinic"; // Replace with dynamic value if needed
+
+                // Create an Intent to navigate to the Book_Appointment2Activity
                 Intent intent = new Intent(Clinic_SelectionActivity.this, Book_AppointmnetActivity.class);
+
+                // Pass the clinic name to the next activity
+                intent.putExtra("clinic_name", clinicName);
+
+                // Start the activity
                 startActivity(intent);
             }
         });

@@ -14,35 +14,39 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Clinic_ProfileActivity extends AppCompatActivity {
 
+    private String clinicName = "Happy Paws Veterinary Clinic"; // Replace with dynamic value if needed
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_clinic_profile);
+
+        // Set up window insets handling for Edge-to-Edge layout
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        ImageView backButton = findViewById(R.id.back_button);
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Start the Clinic_SelectionActivity
-                Intent intent = new Intent(Clinic_ProfileActivity.this, Clinic_SelectionActivity.class);
-                startActivity(intent);
-            }
+        // Back Button to return to Clinic_SelectionActivity
+        ImageView backButton = findViewById(R.id.back_button);
+        backButton.setOnClickListener(v -> {
+            Intent intent = new Intent(Clinic_ProfileActivity.this, Clinic_SelectionActivity.class);
+            startActivity(intent);
         });
-        Button button = findViewById(R.id.button20);
-        // Set an OnClickListener for the button
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Create an Intent to navigate to the MainActivity5
-                Intent intent = new Intent(Clinic_ProfileActivity.this, Book_AppointmnetActivity.class);
-                startActivity(intent);
-            }
+
+        // Book Appointment Button
+        Button bookAppointmentButton = findViewById(R.id.button20);
+        bookAppointmentButton.setOnClickListener(v -> {
+            // If clinicName is dynamic, retrieve it here
+            // Example: Fetch from a TextView or a Database
+            // clinicName = getIntent().getStringExtra("clinic_name");
+
+            // Navigate to Book_AppointmnetActivity and pass clinic name
+            Intent intent = new Intent(Clinic_ProfileActivity.this, Book_AppointmnetActivity.class);
+            intent.putExtra("clinic_name", clinicName);
+            startActivity(intent);
         });
     }
 }
