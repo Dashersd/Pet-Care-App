@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF6E9"
+    tools:context=".edit_vet_profileActivity">
+
+    <ImageView
+        android:id="@+id/leftArrow"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="@string/back"
+        android:src="@drawable/left_arrow_black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="Edit Profile"
+        android:textColor="#000000"
+        android:textSize="38sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="369dp"
+        android:layout_height="7dp"
+        android:background="@drawable/violet_line"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="99dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_gravity="start"
+        android:background="@drawable/et_violet"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="center"
+        android:hint="Clinic Name"
+        android:hintTextColor="@color/gray"
+        android:paddingStart="20dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="31dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="132dp" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_gravity="start"
+        android:background="@drawable/et_violet"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="center"
+        android:hint="About"
+        android:hintTextColor="@color/gray"
+        android:paddingStart="20dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="31dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="203dp" />
+
+    <TextView
+        android:id="@+id/textView57"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="Operating Hourse"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="315dp" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:layout_gravity="start"
+        android:background="@drawable/et_violet"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="center"
+        android:hint="ex. Monday to Friday: 8:00 AM - 6:00 PM"
+        android:hintTextColor="@color/gray"
+        android:paddingStart="20dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="31dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <TextView
+        android:id="@+id/textView58"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="Contact Information"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="450dp" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_gravity="start"
+        android:background="@drawable/et_violet"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="center"
+        android:hint="Phone/Tel Number"
+        android:hintTextColor="@color/gray"
+        android:inputType="number"
+        android:paddingStart="20dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="31dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="483dp" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_gravity="start"
+        android:background="@drawable/et_violet"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="center"
+        android:hint="Email"
+        android:hintTextColor="@color/gray"
+        android:paddingStart="20dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="31dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="552dp" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_gravity="start"
+        android:background="@drawable/et_violet"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="center"
+        android:hint="Website"
+        android:hintTextColor="@color/gray"
+        android:paddingStart="20dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="31dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="620dp" />
+
+    <TextView
+        android:id="@+id/textView59"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="Service Offered"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="694dp" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_gravity="start"
+        android:background="@drawable/et_violet"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:gravity="center"
+        android:hint="ex. Vaccination, Gromming, etc."
+        android:hintTextColor="@color/gray"
+        android:paddingStart="20dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="31dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textSize="23sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="728dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="169dp"
+        android:layout_height="55dp"
+        android:background="@drawable/btn_background2"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="Save"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:gravity="center"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="811dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

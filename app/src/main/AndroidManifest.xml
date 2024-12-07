@@ -17,6 +17,48 @@
         android:screenOrientation="portrait"
         tools:ignore="DiscouragedApi,LockedOrientationActivity">
         <activity
+            android:name=".edit_vet_profileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vet_profileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vet_dashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".clinic_dashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vet_loginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vet_signupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main_whoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vaccine_detailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".repeat_schedule_vaccineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".once_schedule_vaccineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Schedule_vaccineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".add_vaccineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vaccineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".appointment_detailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".edit_licenseActivity"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity"
