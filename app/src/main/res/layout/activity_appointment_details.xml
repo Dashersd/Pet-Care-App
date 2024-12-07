@@ -252,7 +252,8 @@
         android:textColor="#ffff"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="734dp" />
+        tools:layout_editor_absoluteY="734dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button22"
@@ -264,5 +265,6 @@
         android:textColor="#000000"
         android:textSize="25sp"
         tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="809dp" />
+        tools:layout_editor_absoluteY="809dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -62,7 +62,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView47"
+        android:id="@+id/textView48"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -72,7 +72,8 @@
         android:textColor="#000000"
         android:textSize="25sp"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="218dp" />
+        tools:layout_editor_absoluteY="218dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:layout_width="120dp"
@@ -146,7 +147,7 @@
         android:fontFamily="@font/crimson_text_semibold"
         android:gravity="start|center_vertical"
         android:hint="Date of Expiration (optional)"
-        android:hintTextColor="@color/gray"
+        android:hintTextColor="gray"
         android:inputType="date"
         android:paddingStart="20dp"
         android:paddingTop="5dp"
@@ -154,7 +155,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/black"
         android:textSize="21sp"
-        tools:ignore="MissingConstraints"
+        tools:ignore="HardcodedText,MissingConstraints"
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="440dp" />
 

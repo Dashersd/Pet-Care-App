@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF6E9"
-    tools:context=".LogInActivity">
+    android:background="#80C4E9"
+    tools:context=".vet_loginActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -144,7 +144,7 @@
         tools:ignore="HardcodedText" />
 
     <Button
-            android:id="@+id/button4"
+        android:id="@+id/button4"
         android:layout_width="249dp"
         android:layout_height="59dp"
         android:layout_marginTop="48dp"
