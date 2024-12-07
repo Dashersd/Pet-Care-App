@@ -38,7 +38,7 @@
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button1"
         android:layout_width="280dp"
         android:layout_height="78dp"
         android:layout_marginTop="144dp"
@@ -62,7 +62,7 @@
         android:layout_marginTop="32dp"
         android:background="@drawable/btn_background2"
         android:fontFamily="@font/crimson_text_semibold"
-        android:text="Veterinarian"
+        android:text="@string/veterinarian"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -70,7 +70,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button1"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
