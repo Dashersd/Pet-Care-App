@@ -33,7 +33,7 @@ public class main_whoActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(main_whoActivity.this, MainActivity.class);
+                Intent intent = new Intent(main_whoActivity.this, Pet_OwnerLogInActivity.class);
                 startActivity(intent);
             }
         });

@@ -39,15 +39,15 @@ public class vet_loginActivity extends AppCompatActivity {
         //  Initialize Firebase Authentication
         mAuth = FirebaseAuth.getInstance();
 
-        // Check if the user is already signed in
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null) {
-            // User is signed in, navigate to DashboardActivity
-            Intent intent = new Intent(vet_loginActivity.this, vet_dashActivity.class);
-            startActivity(intent);
-            finish(); // Close this activity to prevent returning back
-            return;
-        }
+//        // Check if the user is already signed in
+//        FirebaseUser user = mAuth.getCurrentUser();
+//        if (user != null) {
+//            // User is signed in, navigate to DashboardActivity
+//            Intent intent = new Intent(vet_loginActivity.this, vet_dashActivity.class);
+//            startActivity(intent);
+//            finish(); // Close this activity to prevent returning back
+//            return;
+//        }
 
         // Initialize Firebase instances
         mAuth = FirebaseAuth.getInstance();

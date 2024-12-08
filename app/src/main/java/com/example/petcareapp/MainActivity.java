@@ -33,18 +33,18 @@ public class MainActivity extends AppCompatActivity {
             return WindowInsetsCompat.CONSUMED;
         });
 
-           //  Initialize Firebase Authentication
-            mAuth = FirebaseAuth.getInstance();
-
-            // Check if the user is already signed in
-            FirebaseUser user = mAuth.getCurrentUser();
-            if (user != null) {
-                // User is signed in, navigate to DashboardActivity
-                Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
-                startActivity(intent);
-                finish(); // Close this activity to prevent returning back
-                return;
-            }
+//           //  Initialize Firebase Authentication
+//            mAuth = FirebaseAuth.getInstance();
+//
+//            // Check if the user is already signed in
+//            FirebaseUser user = mAuth.getCurrentUser();
+//            if (user != null) {
+//                // User is signed in, navigate to DashboardActivity
+//                Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+//                startActivity(intent);
+//                finish(); // Close this activity to prevent returning back
+//                return;
+//            }
 
         // Write a message to the Firebase Realtime Database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         // Set up the login button
         Button loginButton = findViewById(R.id.button);
         loginButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, LogInActivity.class);
+            Intent intent = new Intent(MainActivity.this, Pet_OwnerLogInActivity.class);
             startActivity(intent);
         });
 
