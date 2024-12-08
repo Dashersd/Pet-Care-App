@@ -8,86 +8,120 @@
     android:background="#FFF6E9"
     tools:context=".vet_profileActivity">
 
+    <!-- ScrollView containing the entire content -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
     <TextView
         android:id="@+id/textView54"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/crimson_text_bold"
         android:text="Clinic Profile"
         android:textColor="#000000"
         android:textSize="38sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="36dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toEndOf="@+id/leftArrow"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <View
         android:id="@+id/view2"
         android:layout_width="369dp"
         android:layout_height="7dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/violet_line"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="99dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView54"
         tools:ignore="MissingConstraints" />
 
     <View
         android:id="@+id/view3"
         android:layout_width="140dp"
         android:layout_height="140dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/vet_logo"
         android:orientation="horizontal"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="116dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView57"
+        android:id="@+id/clinicNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/crimson_text_bold"
-        android:text="Clinic Name"
+        android:text=""
         android:textColor="#000000"
         android:textSize="29sp"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="256dp"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/view3"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView58"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="192dp"
         android:fontFamily="@font/crimson_text_bold"
         android:text="About"
         android:textColor="#604CC3"
         android:textSize="25sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="298dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/leftArrow"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView59"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Sed do eiusmod "
         android:textColor="#000000"
         android:textSize="18sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="334dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clinicNameTextView"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView60"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/crimson_text_bold"
         android:text="Operating Hours"
         android:textColor="#604CC3"
         android:textSize="25sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="404dp" />
+        app:layout_constraintEnd_toEndOf="@+id/textView59"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView59"
+        app:layout_constraintTop_toBottomOf="@+id/textView59"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView62"
@@ -97,45 +131,51 @@
         android:text="Contact Information"
         android:textColor="#604CC3"
         android:textSize="25sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="475dp" />
+        app:layout_constraintEnd_toEndOf="@+id/textView61"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView61"
+        app:layout_constraintTop_toBottomOf="@+id/textView61"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView61"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="Monday to Friday: 8:00 AM - 6:00 PM"
         android:textColor="#000000"
         android:textSize="18sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="440dp" />
+        app:layout_constraintEnd_toEndOf="@+id/textView59"
+        app:layout_constraintStart_toStartOf="@+id/textView60"
+        app:layout_constraintTop_toBottomOf="@+id/textView59"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView63"
         android:layout_width="53dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/crimson_text_bold"
         android:text="Phone:"
         android:textColor="#604CC3"
         android:textSize="18sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintStart_toStartOf="@+id/textView62"
+        app:layout_constraintTop_toBottomOf="@+id/textView62"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView64"
         android:layout_width="53dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:fontFamily="@font/crimson_text_bold"
         android:text="Email:"
         android:textColor="#604CC3"
         android:textSize="18sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="540dp" />
+        app:layout_constraintStart_toStartOf="@+id/textView63"
+        app:layout_constraintTop_toBottomOf="@+id/textView63"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView65"
@@ -145,69 +185,85 @@
         android:text="Website:"
         android:textColor="#604CC3"
         android:textSize="18sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="568dp" />
+        app:layout_constraintStart_toStartOf="@+id/textView64"
+        app:layout_constraintTop_toBottomOf="@+id/textView64"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView66"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="123456789"
         android:textColor="#000000"
         android:textSize="18sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintEnd_toEndOf="@+id/textView62"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView63"
+        app:layout_constraintTop_toBottomOf="@+id/textView62"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView67"
+        android:id="@+id/clinicEmailTextView"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/crimson_text_semibold"
-        android:text="vetclinic@gmail.com"
+        android:text=""
         android:textColor="#000000"
         android:textSize="18sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="540dp" />
+        app:layout_constraintEnd_toEndOf="@+id/textView61"
+        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintStart_toEndOf="@+id/textView64"
+        app:layout_constraintStart_toStartOf="@+id/textView66"
+        app:layout_constraintTop_toBottomOf="@+id/textView66"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView68"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="www.facebook.com/vetclinic"
         android:textColor="#000000"
         android:textSize="18sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="568dp" />
+        app:layout_constraintEnd_toEndOf="@+id/clinicEmailTextView"
+        app:layout_constraintStart_toEndOf="@+id/textView65"
+        app:layout_constraintTop_toBottomOf="@+id/clinicEmailTextView"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView69"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/crimson_text_bold"
         android:text="Services Offered"
         android:textColor="#604CC3"
         android:textSize="25sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="607dp" />
+        app:layout_constraintEnd_toEndOf="@+id/textView68"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView65"
+        app:layout_constraintTop_toBottomOf="@+id/textView68"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView70"
-        android:layout_width="360dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/crimson_text_semibold"
-        android:text="Vaccination, Routine Check-ups, Grooming, Laboratory Services, Pet Boarding and more"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="650dp" />
+            <TextView
+                android:id="@+id/textView70"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/crimson_text_semibold"
+                android:text="Vaccination, Routine Check-ups, Grooming, Laboratory Services, Pet Boarding and more"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView68"
+                app:layout_constraintHorizontal_bias="0.333"
+                app:layout_constraintStart_toStartOf="@+id/textView69"
+                app:layout_constraintTop_toBottomOf="@+id/textView69"
+                tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/leftArrow"
@@ -219,18 +275,22 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="169dp"
-        android:layout_height="55dp"
-        android:background="@drawable/btn_background2"
-        android:fontFamily="@font/crimson_text_bold"
-        android:gravity="center"
-        android:text="Edit"
-        android:textColor="#FFFFFF"
-        android:textSize="28sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="799dp" />
-
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="169dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/btn_background2"
+                android:fontFamily="@font/crimson_text_bold"
+                android:gravity="center"
+                android:text="Edit"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView70"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/textView70"
+                app:layout_constraintTop_toBottomOf="@+id/textView70"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

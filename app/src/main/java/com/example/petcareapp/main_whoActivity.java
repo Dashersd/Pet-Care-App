@@ -26,12 +26,22 @@ public class main_whoActivity extends AppCompatActivity {
             return insets;
         });
 
+
+
         // Set up the button click listener
         Button button1 = findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(main_whoActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button button = findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(main_whoActivity.this, vet_loginActivity.class);
                 startActivity(intent);
             }
         });

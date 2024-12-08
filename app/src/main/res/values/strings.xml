@@ -64,4 +64,5 @@
     <string name="age">Age</string>
     <string name="age_in_weeks">Age in Weeks</string>
     <string name="veterinarian">Veterinarian</string>
+    <string name="search_client_name">Search Client Name</string>
 </resources>

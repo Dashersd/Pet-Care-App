@@ -16,150 +16,185 @@
         android:theme="@style/Theme.PetCareApp"
         tools:ignore="DiscouragedApi,LockedOrientationActivity"
         tools:targetApi="31" >
+
         <activity
             android:name=".Book_Appointment2Activity"
             android:exported="false" />
+
         <activity
             android:name=".edit_vet_profileActivity"
             android:exported="false" />
+
         <activity
             android:name=".vet_profileActivity"
             android:exported="false" />
+
         <activity
             android:name=".vet_dashActivity"
             android:exported="false" />
+
         <activity
             android:name=".clinic_dashActivity"
             android:exported="false" />
+
         <activity
             android:name=".vet_loginActivity"
             android:exported="false" />
+
         <activity
             android:name=".vet_signupActivity"
             android:exported="false" />
-        <activity
-            android:name=".main_whoActivity"
-            android:exported="false" />
+
+
         <activity
             android:name=".vaccine_detailsActivity"
             android:exported="false" />
+
         <activity
             android:name=".repeat_schedule_vaccineActivity"
             android:exported="false" />
+
         <activity
             android:name=".once_schedule_vaccineActivity"
             android:exported="false" />
+
         <activity
             android:name=".Schedule_vaccineActivity"
             android:exported="false" />
+
         <activity
             android:name=".add_vaccineActivity"
             android:exported="false" />
+
         <activity
             android:name=".vaccineActivity"
             android:exported="false" />
+
         <activity
             android:name=".appointment_detailsActivity"
             android:exported="false" />
+
         <activity
             android:name=".edit_licenseActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".edit_insuranceActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".edit_microchipActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".edit_petActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".license_detailsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".insurance_detailsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".microchip_detailsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".pet_detailsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".pet_profileActivity"
             android:exported="false"
             android:label="@string/title_activity_pet_profile"
             android:screenOrientation="portrait"
-            tools:ignore="DiscouragedApi,LockedOrientationActivity" /> <!-- Activity declarations -->
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".Book_AppointmnetActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".Clinic_ProfileActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".Clinice_ProfileActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".Clinic_SelectionActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".AppoinmentActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".DashboardActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".SignInActivity2"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".SignInActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".LogInActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            tools:ignore="DiscouragedApi,LockedOrientationActivity" /> <!-- Main Activity (Launcher activity) -->
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
         <activity
             android:name=".MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" >
+        </activity>
+        <!-- This is the launcher activity -->
+        <activity
+            android:name=".main_whoActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -14,50 +14,61 @@
         android:id="@+id/textView54"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:fontFamily="@font/crimson_text_bold"
         android:text="Dashboard"
         android:textColor="#000000"
         android:textSize="38sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="65dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <EditText
+        android:id="@+id/searchName"
         android:layout_width="350dp"
         android:layout_height="45dp"
         android:layout_gravity="start"
+        android:layout_marginTop="24dp"
         android:background="@drawable/et_violet"
         android:drawablePadding="10dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:gravity="center"
-        android:hint="Search Client Name"
-        android:textColorHint="@color/gray"
+        android:hint="@string/search_client_name"
         android:paddingStart="20dp"
         android:paddingTop="5dp"
         android:paddingEnd="31dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/black"
+        android:textColorHint="@color/gray"
         android:textSize="18sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="126dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView54"
+        tools:ignore="Autofill,MissingConstraints,TextFields" />
 
     <View
         android:id="@+id/view3"
         android:layout_width="55dp"
         android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/vet_logo"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="324dp"
-        tools:layout_editor_absoluteY="31dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
         android:id="@+id/view4"
         android:layout_width="369dp"
         android:layout_height="110dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/violet_rectangle2"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="190dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchName">
 
         <!-- TextView 1 -->
         <TextView
@@ -69,7 +80,8 @@
             android:fontFamily="@font/crimson_text_semibold"
             android:text="Client Name"
             android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
 
         <!-- TextView 2 -->
         <TextView
@@ -82,7 +94,8 @@
             android:fontFamily="@font/crimson_text_semibold"
             android:text="Pet Name"
             android:textColor="@android:color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="HardcodedText" />
 
         <!-- TextView 3 -->
         <TextView
@@ -95,7 +108,8 @@
             android:fontFamily="@font/crimson_text_semibold"
             android:text="Care Service"
             android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
 
         <!-- Button 1 -->
 
