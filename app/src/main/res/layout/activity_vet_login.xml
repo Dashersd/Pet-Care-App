@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#80C4E9"
+    android:background="#FFF6E9"
     tools:context=".vet_loginActivity">
 
     <ImageView
@@ -41,7 +41,7 @@
         android:layout_height="46dp"
         android:layout_marginTop="80dp"
         android:autofillHints=""
-        android:background="@drawable/text_border"
+        android:background="@drawable/et_violet"
         android:fontFamily="@font/crimson_text_bold"
         android:inputType="textEmailAddress"
         android:paddingStart="70dp"
@@ -85,7 +85,7 @@
         android:layout_height="46dp"
         android:layout_marginTop="52dp"
         android:importantForAccessibility="yes"
-        android:background="@drawable/text_border"
+        android:background="@drawable/et_violet"
         android:fontFamily="@font/crimson_text_bold"
         android:ems="10"
         android:importantForAutofill="no"
@@ -148,7 +148,7 @@
         android:layout_width="249dp"
         android:layout_height="59dp"
         android:layout_marginTop="48dp"
-        android:background="@drawable/btn_background"
+        android:background="@drawable/btn_background2"
         android:fontFamily="@font/crimson_text_bold"
         android:text="@string/log_in"
         android:textColor="@color/white"
