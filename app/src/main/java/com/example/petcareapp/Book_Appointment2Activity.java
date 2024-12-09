@@ -31,7 +31,9 @@ public class Book_Appointment2Activity extends AppCompatActivity {
     private String petName = null; // To store the selected pet
     private String serviceType = null; // To store the selected service
     private String appointmentReason = null; // To store the reason for appointment
+    private String userName = null; // Set to null initially for clarity
     private DatabaseReference databaseReference;
+    private DatabaseReference usersReference;
     private String currentUserId;
 
     @Override
@@ -60,9 +62,11 @@ public class Book_Appointment2Activity extends AppCompatActivity {
 
         // Initialize Firebase Database References
         databaseReference = FirebaseDatabase.getInstance().getReference("users").child(currentUserId);
+        usersReference = FirebaseDatabase.getInstance().getReference("Users").child(currentUserId);
 
-        // Fetch appointment details from the user's appointment data
+        // Fetch appointment details and user name
         fetchAppointmentDetails();
+        fetchUserName();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -123,10 +127,45 @@ public class Book_Appointment2Activity extends AppCompatActivity {
                 .addOnFailureListener(e -> Toast.makeText(this, "Failed to fetch details: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
+    private void fetchUserName() {
+        usersReference.child("name").get()
+                .addOnSuccessListener(dataSnapshot -> {
+                    if (dataSnapshot.exists()) {
+                        userName = dataSnapshot.getValue(String.class);
+                        if (userName == null || userName.isEmpty()) {
+                            userName = "Unknown User"; // Fallback for empty names
+                        }
+                    } else {
+                        userName = "Unknown User"; // Fallback for missing name field
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    fetchFallbackUserName(); // Attempt fallback if fetching fails
+                    Toast.makeText(this, "Failed to fetch user name: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    private void fetchFallbackUserName() {
+        DatabaseReference fallbackReference = FirebaseDatabase.getInstance().getReference("users").child(currentUserId);
+        fallbackReference.child("name").get()
+                .addOnSuccessListener(dataSnapshot -> {
+                    if (dataSnapshot.exists()) {
+                        userName = dataSnapshot.getValue(String.class);
+                        if (userName == null || userName.isEmpty()) {
+                            userName = "Unknown User";
+                        }
+                    } else {
+                        userName = "Unknown User"; // Final fallback
+                    }
+                })
+                .addOnFailureListener(e -> userName = "Unknown User");
+    }
+
     private void showConfirmationDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Confirm Appointment")
-                .setMessage("Selected slot: " + selectedSlot +
+                .setMessage("User: " + (userName != null ? userName : "Loading...") +
+                        "\nSelected slot: " + selectedSlot +
                         "\nSelected date: " + selectedDate +
                         "\nClinic: " + clinicName +
                         "\nPet: " + petName +
@@ -139,19 +178,34 @@ public class Book_Appointment2Activity extends AppCompatActivity {
     }
 
     private void saveAppointmentToDatabase() {
-       DatabaseReference userAppointmentsRef = databaseReference.child("appointments");
+        DatabaseReference userAppointmentsRef = databaseReference.child("appointments");
+        DatabaseReference clinicAppointmentsRef = FirebaseDatabase.getInstance().getReference("Clinics")
+                .child(clinicName.replaceAll(" ", "_").toLowerCase())
+                .child("appointments");
+
         String appointmentId = userAppointmentsRef.push().getKey();
+
         Map<String, Object> appointmentData = new HashMap<>();
         appointmentData.put("slot", selectedSlot);
         appointmentData.put("date", selectedDate);
         appointmentData.put("clinic_name", clinicName);
+        appointmentData.put("userId", currentUserId);
+        appointmentData.put("userName", userName != null ? userName : "Unknown User");
         appointmentData.put("pet", petName);
         appointmentData.put("service", serviceType);
         appointmentData.put("reason", appointmentReason);
         appointmentData.put("status", "confirmed");
 
         if (appointmentId != null) {
-            userAppointmentsRef.child(appointmentId).setValue(appointmentData);
+            userAppointmentsRef.child(appointmentId).setValue(appointmentData)
+                    .addOnSuccessListener(unused -> Toast.makeText(this, "Appointment saved successfully!", Toast.LENGTH_SHORT).show())
+                    .addOnFailureListener(e -> Toast.makeText(this, "Failed to save appointment: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+
+            clinicAppointmentsRef.child(appointmentId).setValue(appointmentData)
+                    .addOnSuccessListener(unused -> Toast.makeText(this, "Appointment saved to clinic records!", Toast.LENGTH_SHORT).show())
+                    .addOnFailureListener(e -> Toast.makeText(this, "Failed to save appointment to clinic: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+        } else {
+            Toast.makeText(this, "Error generating appointment ID.", Toast.LENGTH_SHORT).show();
         }
     }
 }

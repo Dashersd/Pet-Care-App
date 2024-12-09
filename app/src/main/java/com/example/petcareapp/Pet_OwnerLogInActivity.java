@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -74,6 +75,15 @@ public class Pet_OwnerLogInActivity extends AppCompatActivity {
                                 "Error: " + e.getMessage(),
                                 Toast.LENGTH_SHORT).show();
                     });
+            TextView textView10 = findViewById(R.id.textView10);
+
+            textView10.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Pet_OwnerLogInActivity.this, SignInActivity.class);
+                    startActivity(intent);
+                }
+            });
         });
 
         // Set OnClickListener for password visibility toggle
