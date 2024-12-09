@@ -43,10 +43,10 @@ public class Book_Appointment2Activity extends AppCompatActivity {
         // Retrieve the current user's ID from Firebase Authentication
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null) {
-            currentUserId = currentUser.getUid(); // Retrieve the logged-in user's ID
+            currentUserId = currentUser.getUid();
         } else {
             Toast.makeText(this, "Error: User not logged in.", Toast.LENGTH_LONG).show();
-            finish(); // Close activity if no user is logged in
+            finish();
             return;
         }
 
@@ -54,14 +54,14 @@ public class Book_Appointment2Activity extends AppCompatActivity {
         clinicName = getIntent().getStringExtra("clinic_name");
         if (clinicName == null || clinicName.isEmpty()) {
             Toast.makeText(this, "Error: Clinic name not provided.", Toast.LENGTH_SHORT).show();
-            finish(); // Close activity if no clinic name is provided
+            finish();
             return;
         }
 
-        // Initialize Firebase Database Reference
+        // Initialize Firebase Database References
         databaseReference = FirebaseDatabase.getInstance().getReference("users").child(currentUserId);
 
-        // Fetch additional details from Firebase
+        // Fetch appointment details from the user's appointment data
         fetchAppointmentDetails();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -77,14 +77,13 @@ public class Book_Appointment2Activity extends AppCompatActivity {
         CalendarView calendarView = findViewById(R.id.calendar_view);
         Button makeAppointmentButton = findViewById(R.id.make_appointment_button);
 
-        // Slot click listener - User can select only one slot at a time
+        // Slot click listener
         slot8am.setOnClickListener(view -> selectSingleSlot(slot8am));
         slot830am.setOnClickListener(view -> selectSingleSlot(slot830am));
         slot10am.setOnClickListener(view -> selectSingleSlot(slot10am));
 
         // Date selection listener
         calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
-            // Format the selected date
             selectedDate = year + "-" + (month + 1) + "-" + dayOfMonth;
         });
 
@@ -99,23 +98,18 @@ public class Book_Appointment2Activity extends AppCompatActivity {
     }
 
     private void selectSingleSlot(TextView selectedSlotView) {
-        // Reset the background color of all slots
         resetSlotSelection();
-
-        // Set the selected slot
         selectedSlot = selectedSlotView.getText().toString();
-        selectedSlotView.setBackgroundColor(Color.LTGRAY); // Highlight selected slot
+        selectedSlotView.setBackgroundColor(Color.LTGRAY);
     }
 
     private void resetSlotSelection() {
-        // Reset the background color of all slot views
         findViewById(R.id.slot_8am).setBackgroundColor(Color.TRANSPARENT);
         findViewById(R.id.slot_830am).setBackgroundColor(Color.TRANSPARENT);
         findViewById(R.id.slot_10am).setBackgroundColor(Color.TRANSPARENT);
     }
 
     private void fetchAppointmentDetails() {
-        // Fetch details like selected pet, service type, and reason from the database
         databaseReference.child("appointmentDetails").get()
                 .addOnSuccessListener(dataSnapshot -> {
                     if (dataSnapshot.exists()) {
@@ -130,7 +124,6 @@ public class Book_Appointment2Activity extends AppCompatActivity {
     }
 
     private void showConfirmationDialog() {
-        // Show a confirmation dialog with the details
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Confirm Appointment")
                 .setMessage("Selected slot: " + selectedSlot +
@@ -146,18 +139,8 @@ public class Book_Appointment2Activity extends AppCompatActivity {
     }
 
     private void saveAppointmentToDatabase() {
-        if (currentUserId == null || currentUserId.isEmpty()) {
-            Toast.makeText(this, "Error: User not logged in.", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        // Reference to the user's appointments
-        DatabaseReference userAppointmentsRef = databaseReference.child("appointments");
-
-        // Create a unique key for the appointment
+       DatabaseReference userAppointmentsRef = databaseReference.child("appointments");
         String appointmentId = userAppointmentsRef.push().getKey();
-
-        // Map to store the combined appointment data (single HashMap)
         Map<String, Object> appointmentData = new HashMap<>();
         appointmentData.put("slot", selectedSlot);
         appointmentData.put("date", selectedDate);
@@ -167,13 +150,8 @@ public class Book_Appointment2Activity extends AppCompatActivity {
         appointmentData.put("reason", appointmentReason);
         appointmentData.put("status", "confirmed");
 
-        // Save the combined appointment data under a unique appointment ID
         if (appointmentId != null) {
-            userAppointmentsRef.child(appointmentId).setValue(appointmentData)
-                    .addOnSuccessListener(unused -> Toast.makeText(this, "Appointment saved successfully!", Toast.LENGTH_SHORT).show())
-                    .addOnFailureListener(e -> Toast.makeText(this, "Failed to save appointment: " + e.getMessage(), Toast.LENGTH_SHORT).show());
-        } else {
-            Toast.makeText(this, "Error generating appointment ID.", Toast.LENGTH_SHORT).show();
+            userAppointmentsRef.child(appointmentId).setValue(appointmentData);
         }
     }
 }

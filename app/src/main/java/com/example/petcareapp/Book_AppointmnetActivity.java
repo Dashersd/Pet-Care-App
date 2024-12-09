@@ -29,12 +29,15 @@ public class Book_AppointmnetActivity extends AppCompatActivity {
     private EditText reasonEditText;
     private String currentUserId;
     private DatabaseReference databaseReference;
-    private String clinicName = "Happy Paws Veterinary Clinic"; // For example, dynamic clinic name
+    private String clinicName; // Dynamic clinic name received from Clinic_SelectionActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_appointmnet);
+
+        // Get the clinic name from the Intent
+        clinicName = getIntent().getStringExtra("clinic_name");
 
         // Initialize Firebase Authentication and Database Reference
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -62,20 +65,19 @@ public class Book_AppointmnetActivity extends AppCompatActivity {
         // Set up the back arrow click listener
         ImageView backArrow = findViewById(R.id.back_arrow);
         backArrow.setOnClickListener(v -> {
-            // Open the Clinic_ProfileActivity
-            Intent intent = new Intent(Book_AppointmnetActivity.this, Clinic_ProfileActivity.class);
+            Intent intent = new Intent(Book_AppointmnetActivity.this, Clinic_SelectionActivity.class);
             startActivity(intent);
         });
 
         // Set up the Spinner for selecting pets
         ArrayAdapter<String> petAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, new String[]{"Dog", "Cat", "Other"}); // Replace with dynamic values if needed
+                android.R.layout.simple_spinner_item, new String[]{"Select","Dog", "Cat", "Other"});
         petAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         petSpinner.setAdapter(petAdapter);
 
         // Set up the Spinner for selecting services
         ArrayAdapter<String> serviceAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, new String[]{"Vaccination", "Grooming", "Checkup", "Surgery"});
+                android.R.layout.simple_spinner_item, new String[]{"Select","Vaccination", "Grooming", "Checkup", "Surgery"});
         serviceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         serviceSpinner.setAdapter(serviceAdapter);
 
@@ -98,7 +100,7 @@ public class Book_AppointmnetActivity extends AppCompatActivity {
 
             // Navigate to Book_Appointment2Activity
             Intent intent = new Intent(Book_AppointmnetActivity.this, Book_Appointment2Activity.class);
-            intent.putExtra("clinic_name", clinicName); // Dynamic clinic name
+            intent.putExtra("clinic_name", clinicName); // Pass the dynamic clinic name
             startActivity(intent);
         });
     }
@@ -109,6 +111,7 @@ public class Book_AppointmnetActivity extends AppCompatActivity {
         appointmentDetails.put("selectedPet", pet);
         appointmentDetails.put("selectedService", service);
         appointmentDetails.put("reason", reason);
+        appointmentDetails.put("clinicName", clinicName); // Store clinic name in Firebase as well
 
         // Save to Firebase under the user's ID
         databaseReference.child("appointmentDetails").setValue(appointmentDetails)
