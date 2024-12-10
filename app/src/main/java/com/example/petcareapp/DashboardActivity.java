@@ -1,5 +1,7 @@
 package com.example.petcareapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -121,6 +123,41 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(DashboardActivity.this, pet_profileActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        // **New Logout button functionality**
+        Button button24 = findViewById(R.id.button24);
+        button24.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an AlertDialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(DashboardActivity.this);
+                builder.setTitle("Log Out");
+                builder.setMessage("Are you sure you want to log out?");
+
+                // "Confirm" button action
+                builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Open LogOutActivity
+                        Intent intent = new Intent(DashboardActivity.this, Pet_OwnerLogInActivity.class);
+                        startActivity(intent);
+                        finish(); // Finish the current activity so the user cannot go back to it
+                    }
+                });
+
+                // "No" button action
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Dismiss the dialog
+                        dialog.dismiss();
+                    }
+                });
+
+                // Show the dialog
+                builder.create().show();
             }
         });
     }

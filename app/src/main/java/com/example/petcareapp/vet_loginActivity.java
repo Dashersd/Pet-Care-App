@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -55,6 +56,18 @@ public class vet_loginActivity extends AppCompatActivity {
             Intent intent = new Intent(vet_loginActivity.this, vet_signupActivity.class);
             startActivity(intent);
         });
+//        //  Initialize Firebase Authentication
+//        mAuth = FirebaseAuth.getInstance();
+//
+//        // Check if the user is already signed in
+//        FirebaseUser user = mAuth.getCurrentUser();
+//        if (user != null) {
+//            // User is signed in, navigate to DashboardActivity
+//            Intent intent = new Intent(vet_loginActivity.this, vet_dashActivity.class);
+//            startActivity(intent);
+//            finish(); // Close this activity to prevent returning back
+//            return;
+//        }
 
         hidePassImageView.setOnClickListener(v -> togglePasswordVisibility());
     }

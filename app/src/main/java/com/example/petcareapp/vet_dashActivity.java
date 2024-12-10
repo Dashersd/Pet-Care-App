@@ -1,13 +1,16 @@
 package com.example.petcareapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -66,6 +69,10 @@ public class vet_dashActivity extends AppCompatActivity {
             Intent intent = new Intent(vet_dashActivity.this, vet_profileActivity.class);
             startActivity(intent);
         });
+
+        // Initialize button24 and set OnClickListener to show the dialog
+        Button button24 = findViewById(R.id.button24);
+        button24.setOnClickListener(v -> showConfirmationDialog());
     }
 
     private void fetchClinicName(String vetUserId) {
@@ -123,5 +130,35 @@ public class vet_dashActivity extends AppCompatActivity {
         }).addOnFailureListener(e ->
                 Toast.makeText(this, "Failed to fetch appointments: " + e.getMessage(), Toast.LENGTH_SHORT).show()
         );
+    }
+
+    private void showConfirmationDialog() {
+        // Create an AlertDialog builder
+        AlertDialog.Builder builder = new AlertDialog.Builder(vet_dashActivity.this);
+        builder.setTitle("Confirmation");
+        builder.setMessage("Are you sure you want to proceed?");
+
+        // Set the "Confirm" button
+        builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Open VetLoginActivity
+                Intent intent = new Intent(vet_dashActivity.this, vet_loginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Set the "No" button
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Dismiss the dialog
+                dialog.dismiss();
+            }
+        });
+
+        // Show the dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
